@@ -2,11 +2,11 @@
 
 [![Nuget](https://buildstats.info/nuget/TimerSink.NET)](https://www.nuget.org/packages/TimerSink.NET)
 
-Uses a `Stopwatch` and `PrecisionTimer` to track a pool of `Tasks` and complete them at regular `Intervals`
+Uses a `Stopwatch` and [`PrecisionTimer`](https://www.nuget.org/packages/PrecisionTimer.NET/) to track a pool of `Tasks` and complete them at regular `Intervals`
 
-The `Resolution` for events is `1 Millisecond` and the `TimeSink` is capable of honoring it.
+The `Resolution` for events is `1 Millisecond` and the `TimerSink` is capable of honoring it.
 
-`TimingSinkItems` can be set to wait for the Synchronization Context, The default is `ConfigureAwait(false)`
+`TimingSinkItems` can be set to wait for the `Synchronization Context`, The default is `ConfigureAwait(false)`
 
 # Usage 
 

@@ -56,6 +56,7 @@ namespace TestSink
                 await Task.Delay(5000).ConfigureAwait(false);
             }
         }
+
         static async Task SinkHealth()
         {
             while (true)
