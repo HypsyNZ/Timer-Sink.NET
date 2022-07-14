@@ -5,7 +5,7 @@
     <NeutralLanguage>en</NeutralLanguage>
     <TargetFramework>netstandard2.0</TargetFramework>
     
-    <Version>4.2.5</Version>
+    <Version>4.2.6</Version>
     <Company>S Christison</Company>
     <Authors>S Christison</Authors>
     <Copyright>S Christison ©2022</Copyright>
@@ -14,9 +14,9 @@
     <RepositoryUrl>https://github.com/HypsyNZ/Timer-Sink.NET</RepositoryUrl>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Description>A Very Simple Timed Task Pool Controlled by a Timer Event and Stopwatch</Description>
-    <PackageReleaseNotes>Update Reference: PrecisionTimer.NET</PackageReleaseNotes>
-    <PackageTags>timer, sink, stopwatch, precision, timer-task, task-sink, pool</PackageTags>    
+    <Description>A Very Simple Timed Task Pool Controlled by a Precision Timer</Description>
+    <PackageReleaseNotes>https://github.com/HypsyNZ/Timer-Sink.NET/tree/main/TimerSink.NET</PackageReleaseNotes>
+    <PackageTags>timer, sink, stopwatch, precision, timer-task, task-sink, pool, 1ms, resolution</PackageTags>    
     <RepositoryType>git</RepositoryType>
 
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -43,6 +43,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-    <PackageReference Include="PrecisionTimer.NET" Version="2.2.1" />
+    <PackageReference Include="PrecisionTimer.NET" Version="2.2.4.1" />
   </ItemGroup>
 </Project>

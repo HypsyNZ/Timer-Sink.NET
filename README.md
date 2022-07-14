@@ -1,18 +1,12 @@
 # TimerSink.NET
 
-[![Nuget](https://img.shields.io/nuget/v/TimerSink.NET)](https://www.nuget.org/packages/TimerSink.NET)
+[![Nuget](https://buildstats.info/nuget/TimerSink.NET)](https://www.nuget.org/packages/TimerSink.NET)
 
-Timer Sink uses a `Stopwatch` to track a pool of `Tasks` and complete `Actions` at regular `Intervals`
+Uses a `Stopwatch` and `PrecisionTimer` to track a pool of `Tasks` and complete them at regular `Intervals`
 
-TimingSinkItems don't suffer from Timer Drift.
+The `Resolution` for events is `1 Millisecond` and the `TimeSink` is capable of honoring it.
 
-TimingSinkItems can be set to wait for the UI Context, The default is `ConfigureAwait(false)`
-
-# PrecisionTimer.NET
-
-You will need [PrecisionTimer.NET](https://github.com/HypsyNZ/Precision-Timer.NET) to use this, Each `TimingSinkItem` will have a `PrecisionTimer` created for it automatically, 
-
-You just need to `Start()` the `Sink` and the `PrecisionTimers` will also start
+`TimingSinkItems` can be set to wait for the Synchronization Context, The default is `ConfigureAwait(false)`
 
 # Usage 
 
@@ -22,7 +16,7 @@ Create a `TimingSink`
 TimingSink tSink = new TimingSink();
 ```
 
-Create a `TimingSinkItem` with `ConfigureAwait(false)` that will run every 200ms
+Create a `TimingSinkItem` with `ConfigureAwait(false)` that will run every `200ms`
 
 ```cs
 private void TaskMethod() { // Your Code Here }
@@ -43,7 +37,7 @@ tSink.Start();
 
 # Examples
 
-Create a `TimingSinkItem` with `ConfigureAwait(false)` that will run every 200ms
+Create a `TimingSinkItem` with `ConfigureAwait(false)` that will run every `200ms`
 
 ```cs
 TimingSinkItem TaskToTime = new TimingSinkItem(TaskMethod, 200);
@@ -63,6 +57,12 @@ Create a `TimingSinkItem` with `ConfigureAwait(true)` and `throwOnError` to catc
 TimingSinkItem TaskToTimeThrowError = new TimingSinkItem(TaskMethodUI, 200, true, true);
 ```
 
+Check the `Health` of the `Sink`
+```cs
+if(tSink.SinkFaulted){ }
+```
+
+You can view a [Full Example on Github](https://github.com/HypsyNZ/Timer-Sink.NET/tree/main/TestSink/)
 
 # Warning
 
@@ -70,13 +70,4 @@ Your Tasks will execute at the Interval and Execution time is Excluded.
 
 If you place a long running activity into a `TimerSinkItem` and set the `Interval` to be shorter than the execution time you will end up with multiple running `Tasks`
 
-You should be aware of this.
-
-# Tips
-
-If you found this useful pleases consider leaving a tip
-
-- [x] BTC: 1NXUg88UvRWYn1WTnikVNn2fbbEtuTeXzm
-- [x] ETH: 0x50740d132481be4721b1742670031baee3655ec2
-- [x] DOGE: DS6orKQwdK4sBTmwoS9NVqvWCKA5ksGPfa
-- [x] LTC: Lbd3oMKeokyXUQaxBDJpMMNVUws5wYhQES
+You can use [LockedTask.NET](https://www.nuget.org/packages/LockedTask.NET) to ensure there is only ever one of your `Task` for long running methods
