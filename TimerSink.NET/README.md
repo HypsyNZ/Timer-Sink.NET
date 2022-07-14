@@ -1,6 +1,7 @@
-### Version 4.2.6
+### Version 4.2.7
 - [x] Add `SinkFaulted` bool to indicate when something has gone wrong
 - [x] Updated Example/Test
+- [x] Updated [`PrecisionTimer.NET`](https://www.nuget.org/packages/PrecisionTimer.NET/)
 
 ### Version 4.2.5
 - [x] Update Reference: PrecisionTimer.NET
