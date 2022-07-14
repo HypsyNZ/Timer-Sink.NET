@@ -1,3 +1,7 @@
+### Version 4.2.6
+- [x] Add `SinkFaulted` bool to indicate when something has gone wrong
+- [x] Updated Example/Test
+
 ### Version 4.2.5
 - [x] Update Reference: PrecisionTimer.NET
 
